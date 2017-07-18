@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cryptowat Essentials</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        
+        html, body {
+            height: 100%;
+            width: 100%;
+            display: table;
+        }
+
+        #chart-main {
+            height: 980px;
+        }
+
+        #chart-top-right {
+            height: 490px;
+        }
+
+        #chart-bottom-right {
+            height: 490px;
+        }
+
+        .col-md-6 {
+            padding: 0px;
+        }
+
+        .col-md-12 {
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6" id="chart-main"></div>
+            <div class="col-md-6">
+                <div class="col-md-12" id="chart-top-right"></div>
+                <div class="col-md-12" id="chart-bottom-right"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+<script type="text/javascript" src="https://static.cryptowat.ch/assets/scripts/embed.bundle.js"></script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    
+    var chart = new cryptowatch.Embed('bitfinex', 'ethusd', {
+    // timePeriod: '1h'
+    });
+    chart.mount('#chart-main');
+
+    var chart = new cryptowatch.Embed('bitfinex', 'btcusd', {
+    // timePeriod: '1h'
+    });
+    chart.mount('#chart-top-right');
+
+    var chart = new cryptowatch.Embed('gdax', 'ethusd', {
+    // timePeriod: '1h'
+    });
+    chart.mount('#chart-bottom-right');
+
+</script>
