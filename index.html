@@ -89,29 +89,88 @@
 <script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
+
+    // function chartOverlay() {
+    // }
     
-    var chart = new cryptowatch.Embed('bitfinex', 'ethusd', {
+    // TODO: use same function to DRY
+    var chart = new cryptowatch.Embed('gdax', 'btcusd', {
+	    presetColorScheme: 'albuquerque',
     // timePeriod: '1h'
+            ta: {
+		    lines:       ["2BC400", "E01500", "22A9CB", "C31B64", "E3C22D"], // EMA, MA, and other lies
+		    channel:     "68C01C", // Keltner channel, bollinger bands
+		    // Ichimoku lines
+		    // tenkanSen:   "5BA6B3",
+		    // kijunSen:    "CD66A9",
+		    // chikouSpan:  "626174",
+		    // senkouSpanA: "6CB57E",
+		    // senkouSpanB: "C86C64"
+	    }
     });
     chart.mount('#chart-main');
 
-    var chart = new cryptowatch.Embed('gdax', 'etheur', {
+    var chart = new cryptowatch.Embed('gdax', 'ethusd', {
+	    presetColorScheme: 'albuquerque',
     // timePeriod: '1h'
+            ta: {
+		    lines:       ["2BC400", "E01500", "22A9CB", "C31B64", "E3C22D"], // EMA, MA, and other lies
+		    channel:     "68C01C", // Keltner channel, bollinger bands
+		    // Ichimoku lines
+		    // tenkanSen:   "5BA6B3",
+		    // kijunSen:    "CD66A9",
+		    // chikouSpan:  "626174",
+		    // senkouSpanA: "6CB57E",
+		    // senkouSpanB: "C86C64"
+	    }
     });
     chart.mount('#chart-secondary');
 
-    var chart = new cryptowatch.Embed('gdax', 'ethusd', {
+    var chart = new cryptowatch.Embed('gdax', 'ethbtc', {
+	    presetColorScheme: 'albuquerque',
     // timePeriod: '1h'
+            ta: {
+		    lines:       ["2BC400", "E01500", "22A9CB", "C31B64", "E3C22D"], // EMA, MA, and other lies
+		    channel:     "68C01C", // Keltner channel, bollinger bands
+		    // Ichimoku lines
+		    // tenkanSen:   "5BA6B3",
+		    // kijunSen:    "CD66A9",
+		    // chikouSpan:  "626174",
+		    // senkouSpanA: "6CB57E",
+		    // senkouSpanB: "C86C64"
+	    }
     });
     chart.mount('#chart-top-right');
 
-    var chart = new cryptowatch.Embed('gemini', 'ethusd', {
+    var chart = new cryptowatch.Embed('gdax', 'etheur', {
+	    presetColorScheme: 'albuquerque',
     // timePeriod: '1h'
+            ta: {
+		    lines:       ["2BC400", "E01500", "22A9CB", "C31B64", "E3C22D"], // EMA, MA, and other lies
+		    channel:     "68C01C", // Keltner channel, bollinger bands
+		    // Ichimoku lines
+		    // tenkanSen:   "5BA6B3",
+		    // kijunSen:    "CD66A9",
+		    // chikouSpan:  "626174",
+		    // senkouSpanA: "6CB57E",
+		    // senkouSpanB: "C86C64"
+	    }
     });
     chart.mount('#chart-center');
 
-    var chart = new cryptowatch.Embed('bitfinex', 'btcusd', {
+    var chart = new cryptowatch.Embed('gdax', 'ltcusd', {
+	    presetColorScheme: 'albuquerque',
     // timePeriod: '1h'
+            ta: {
+		    lines:       ["2BC400", "E01500", "22A9CB", "C31B64", "E3C22D"], // EMA, MA, and other lies
+		    channel:     "68C01C", // Keltner channel, bollinger bands
+		    // Ichimoku lines
+		    // tenkanSen:   "5BA6B3",
+		    // kijunSen:    "CD66A9",
+		    // chikouSpan:  "626174",
+		    // senkouSpanA: "6CB57E",
+		    // senkouSpanB: "C86C64"
+	    }
     });
     chart.mount('#chart-bottom-right');
 
