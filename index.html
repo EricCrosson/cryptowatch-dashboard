@@ -3,7 +3,7 @@
 <head>
     <title>Cryptowat Essentials</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
         
         html, body {
@@ -12,19 +12,43 @@
             display: table;
         }
 
-        #chart-main {
+        #container-left {
             height: 980px;
         }
 
+        #container-right {
+            height: 980px;
+        }
+
+        #container-right-sidebar {
+            height: 980px;
+        }
+
+        #chart-main {
+            height: 50%;
+        }
+
+        #chart-secondary {
+            height: 50%;
+        }
+
         #chart-top-right {
-            height: 490px;
+            height: 33.333%;
+        }
+
+        #chart-center {
+            height: 33.333%;
         }
 
         #chart-bottom-right {
-            height: 490px;
+            height: 33.333%;
         }
 
         .col-md-6 {
+            padding: 0px;
+        }
+
+        .col-md-5 {
             padding: 0px;
         }
 
@@ -36,11 +60,20 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6" id="chart-main"></div>
-            <div class="col-md-6">
+            <div class="col-md-6" id="container-left">
+                <div class="col-md-12" id="chart-main"></div>
+                <div class="col-md-12" id="chart-secondary"></div>
+            </div>
+            
+            <div class="col-md-6" id="container-right">
                 <div class="col-md-12" id="chart-top-right"></div>
+                <div class="col-md-12" id="chart-center"></div>
                 <div class="col-md-12" id="chart-bottom-right"></div>
             </div>
+
+            <!-- <div class="col-md-1" id="container-right-sidebar">
+
+            </div> -->
         </div>
     </div>
 </body>
@@ -51,7 +84,10 @@
 
 
 <script type="text/javascript" src="https://static.cryptowat.ch/assets/scripts/embed.bundle.js"></script>
-<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/assets/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
     
     var chart = new cryptowatch.Embed('bitfinex', 'ethusd', {
@@ -59,14 +95,38 @@
     });
     chart.mount('#chart-main');
 
-    var chart = new cryptowatch.Embed('bitfinex', 'btcusd', {
+    var chart = new cryptowatch.Embed('gdax', 'etheur', {
     // timePeriod: '1h'
     });
-    chart.mount('#chart-top-right');
+    chart.mount('#chart-secondary');
 
     var chart = new cryptowatch.Embed('gdax', 'ethusd', {
     // timePeriod: '1h'
     });
+    chart.mount('#chart-top-right');
+
+    var chart = new cryptowatch.Embed('gemini', 'ethusd', {
+    // timePeriod: '1h'
+    });
+    chart.mount('#chart-center');
+
+    var chart = new cryptowatch.Embed('bitfinex', 'btcusd', {
+    // timePeriod: '1h'
+    });
     chart.mount('#chart-bottom-right');
+
+    $(document).ready(function(){
+
+        // $.ajax({
+        //     url: 'https://api.cryptowat.ch/markets/summaries',
+        //     type: 'GET',
+        //     crossDomain: true,
+        //     dataType: 'jsonp',
+        //     // contentType: 'application/json',
+        //     success: function() { alert("Success"); },
+        //     error: function() { alert('Failed!'); },
+        // });
+
+    });
 
 </script>
